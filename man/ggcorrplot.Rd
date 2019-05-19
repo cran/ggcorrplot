@@ -5,14 +5,15 @@
 \alias{cor_pmat}
 \title{Visualization of a correlation matrix using ggplot2}
 \usage{
-ggcorrplot(corr, method = c("square", "circle"), type = c("full", "lower",
-  "upper"), ggtheme = ggplot2::theme_minimal, title = "",
+ggcorrplot(corr, method = c("square", "circle"), type = c("full",
+  "lower", "upper"), ggtheme = ggplot2::theme_minimal, title = "",
   show.legend = TRUE, legend.title = "Corr", show.diag = FALSE,
   colors = c("blue", "white", "red"), outline.color = "gray",
   hc.order = FALSE, hc.method = "complete", lab = FALSE,
   lab_col = "black", lab_size = 4, p.mat = NULL, sig.level = 0.05,
-  insig = c("pch", "blank"), pch = 4, pch.col = "black", pch.cex = 5,
-  tl.cex = 12, tl.col = "black", tl.srt = 45, digits = 2)
+  insig = c("pch", "blank"), pch = 4, pch.col = "black",
+  pch.cex = 5, tl.cex = 12, tl.col = "black", tl.srt = 45,
+  digits = 2)
 
 cor_pmat(x, ...)
 }
@@ -91,8 +92,6 @@ text label (variable names).}
 \itemize{ \item ggcorrplot(): A graphical display of a
   correlation matrix using ggplot2. \item cor_pmat(): Compute a correlation
   matrix p-values. }
-
-Compute the matrix of correlation p-values
 }
 \examples{
 # Compute a correlation matrix
@@ -113,19 +112,19 @@ ggcorrplot(corr, method = "circle")
 # Reordering the correlation matrix
 # --------------------------------
 # using hierarchical clustering
-ggcorrplot(corr, hc.order = TRUE, outline.col = "white")
+ggcorrplot(corr, hc.order = TRUE, outline.color = "white")
 
 # Types of correlogram layout
 # --------------------------------
 # Get the lower triangle
 ggcorrplot(corr,
   hc.order = TRUE, type = "lower",
-  outline.col = "white"
+  outline.color = "white"
 )
 # Get the upeper triangle
 ggcorrplot(corr,
   hc.order = TRUE, type = "upper",
-  outline.col = "white"
+  outline.color = "white"
 )
 
 # Change colors and theme
@@ -133,7 +132,7 @@ ggcorrplot(corr,
 # Argument colors
 ggcorrplot(corr,
   hc.order = TRUE, type = "lower",
-  outline.col = "white",
+  outline.color = "white",
   ggtheme = ggplot2::theme_gray,
   colors = c("#6D9EC1", "white", "#E46726")
 )
@@ -159,5 +158,14 @@ ggcorrplot(corr,
 ggcorrplot(corr,
   p.mat = p.mat, hc.order = TRUE,
   type = "lower", insig = "blank"
+)
+
+# Changing number of digits for correlation coeffcient
+# --------------------------------
+ggcorrplot(cor(mtcars),
+  type = "lower",
+  insig = "blank",
+  lab = TRUE,
+  digits = 3
 )
 }

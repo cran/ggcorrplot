@@ -1,17 +1,18 @@
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/ggcorrplot)](http://cran.r-project.org/package=ggcorrplot)
+[![Build Status](https://api.travis-ci.org/kassambara/ggcorrplot.png)](https://travis-ci.org/kassambara/ggcorrplot) [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/ggcorrplot)](https://cran.r-project.org/package=ggcorrplot) [![CRAN Checks](https://cranchecks.info/badges/summary/ggcorrplot)](https://cran.r-project.org/web/checks/check_results_ggcorrplot.html) [![packageversion](https://img.shields.io/badge/Package%20version-0.1.2.999-orange.svg?style=flat-square)](https://github.com/kassambara/ggcorrplot)
 
 ggcorrplot: Visualization of a correlation matrix using ggplot2
 ===============================================================
 
-The **ggcorrplot** package can be used to **visualize easily** a **correlation matrix** using **ggplot2**. It provides a solution for **reordering** the correlation matrix and displays the **significance level** on the correlogram. It includes also a function for computing a matrix of **correlation p-values**. It's inspired from the package [corrplot](http://www.sthda.com/english/wiki/visualize-correlation-matrix-using-correlogram).
+The **ggcorrplot** package can be used to **visualize easily** a **correlation matrix** using **ggplot2**. It provides a solution for **reordering** the correlation matrix and displays the **significance level** on the correlogram. It includes also a function for computing a matrix of **correlation p-values**.
 
 Find out more at <http://www.sthda.com/english/wiki/ggcorrplot>.
 
 Installation and loading
 ------------------------
 
-ggcorrplot can be installed from CRAN as follow:
+ggcorrplot can be installed from `CRAN` as follow:
 
 ``` r
 install.packages("ggcorrplot")
@@ -86,7 +87,7 @@ ggcorrplot(corr, method = "circle")
 # Reordering the correlation matrix
 # --------------------------------
 # using hierarchical clustering
-ggcorrplot(corr, hc.order = TRUE, outline.col = "white")
+ggcorrplot(corr, hc.order = TRUE, outline.color = "white")
 ```
 
 ![ggcorrplot: visualize correlation matrix using ggplot2](tools/README-demo-ggcorrplot-3.png)
@@ -96,16 +97,21 @@ ggcorrplot(corr, hc.order = TRUE, outline.col = "white")
 # Types of correlogram layout
 # --------------------------------
 # Get the lower triangle
-ggcorrplot(corr, hc.order = TRUE, type = "lower",
-     outline.col = "white")
+ggcorrplot(corr,
+           hc.order = TRUE,
+           type = "lower",
+           outline.color = "white")
 ```
 
 ![ggcorrplot: visualize correlation matrix using ggplot2](tools/README-demo-ggcorrplot-4.png)
 
 ``` r
-# Get the upeper triangle
-ggcorrplot(corr, hc.order = TRUE, type = "upper",
-     outline.col = "white")
+
+# Get the upper triangle
+ggcorrplot(corr,
+           hc.order = TRUE,
+           type = "upper",
+           outline.color = "white")
 ```
 
 ![ggcorrplot: visualize correlation matrix using ggplot2](tools/README-demo-ggcorrplot-5.png)
@@ -115,10 +121,14 @@ ggcorrplot(corr, hc.order = TRUE, type = "upper",
 # Change colors and theme
 # --------------------------------
 # Argument colors
-ggcorrplot(corr, hc.order = TRUE, type = "lower",
-   outline.col = "white",
-   ggtheme = ggplot2::theme_gray,
-   colors = c("#6D9EC1", "white", "#E46726"))
+ggcorrplot(
+  corr,
+  hc.order = TRUE,
+  type = "lower",
+  outline.color = "white",
+  ggtheme = ggplot2::theme_gray,
+  colors = c("#6D9EC1", "white", "#E46726")
+)
 ```
 
 ![ggcorrplot: visualize correlation matrix using ggplot2](tools/README-demo-ggcorrplot-6.png)
@@ -128,8 +138,10 @@ ggcorrplot(corr, hc.order = TRUE, type = "lower",
 # Add correlation coefficients
 # --------------------------------
 # argument lab = TRUE
-ggcorrplot(corr, hc.order = TRUE, type = "lower",
-   lab = TRUE)
+ggcorrplot(corr,
+           hc.order = TRUE,
+           type = "lower",
+           lab = TRUE)
 ```
 
 ![ggcorrplot: visualize correlation matrix using ggplot2](tools/README-demo-ggcorrplot-7.png)
@@ -140,16 +152,24 @@ ggcorrplot(corr, hc.order = TRUE, type = "lower",
 # --------------------------------
 # Argument p.mat
 # Barring the no significant coefficient
-ggcorrplot(corr, hc.order = TRUE,
-    type = "lower", p.mat = p.mat)
+ggcorrplot(corr,
+           hc.order = TRUE,
+           type = "lower",
+           p.mat = p.mat)
 ```
 
 ![ggcorrplot: visualize correlation matrix using ggplot2](tools/README-demo-ggcorrplot-8.png)
 
 ``` r
+
 # Leave blank on no significant coefficient
-ggcorrplot(corr, p.mat = p.mat, hc.order = TRUE,
-    type = "lower", insig = "blank")
+ggcorrplot(
+  corr,
+  p.mat = p.mat,
+  hc.order = TRUE,
+  type = "lower",
+  insig = "blank"
+)
 ```
 
 ![ggcorrplot: visualize correlation matrix using ggplot2](tools/README-demo-ggcorrplot-9.png)
