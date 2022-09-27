@@ -5,15 +5,34 @@
 \alias{cor_pmat}
 \title{Visualization of a correlation matrix using ggplot2}
 \usage{
-ggcorrplot(corr, method = c("square", "circle"), type = c("full",
-  "lower", "upper"), ggtheme = ggplot2::theme_minimal, title = "",
-  show.legend = TRUE, legend.title = "Corr", show.diag = FALSE,
-  colors = c("blue", "white", "red"), outline.color = "gray",
-  hc.order = FALSE, hc.method = "complete", lab = FALSE,
-  lab_col = "black", lab_size = 4, p.mat = NULL, sig.level = 0.05,
-  insig = c("pch", "blank"), pch = 4, pch.col = "black",
-  pch.cex = 5, tl.cex = 12, tl.col = "black", tl.srt = 45,
-  digits = 2)
+ggcorrplot(
+  corr,
+  method = c("square", "circle"),
+  type = c("full", "lower", "upper"),
+  ggtheme = ggplot2::theme_minimal,
+  title = "",
+  show.legend = TRUE,
+  legend.title = "Corr",
+  show.diag = NULL,
+  colors = c("blue", "white", "red"),
+  outline.color = "gray",
+  hc.order = FALSE,
+  hc.method = "complete",
+  lab = FALSE,
+  lab_col = "black",
+  lab_size = 4,
+  p.mat = NULL,
+  sig.level = 0.05,
+  insig = c("pch", "blank"),
+  pch = 4,
+  pch.col = "black",
+  pch.cex = 5,
+  tl.cex = 12,
+  tl.col = "black",
+  tl.srt = 45,
+  digits = 2,
+  as.is = FALSE
+)
 
 cor_pmat(x, ...)
 }
@@ -37,8 +56,10 @@ objects are also allowed (e.g., `theme_classic()`).}
 \item{legend.title}{a character string for the legend title. lower
 triangular, upper triangular or full matrix.}
 
-\item{show.diag}{logical, whether display the correlation coefficients on the
-principal diagonal.}
+\item{show.diag}{NULL or logical, whether display the correlation
+coefficients on the principal diagonal. If \code{NULL}, the default is to
+show diagonal correlation for \code{type = "full"} and to remove it when
+\code{type} is one of "upper" or "lower".}
 
 \item{colors}{a vector of 3 colors for low, mid and high correlation values.}
 
@@ -78,15 +99,17 @@ text label (variable names).}
 \item{digits}{Decides the number of decimal digits to be displayed (Default:
 `2`).}
 
+\item{as.is}{A logical passed to \code{\link[reshape2]{melt.array}}. If
+\code{TRUE}, dimnames will be left as strings instead of being converted
+using \code{\link[utils]{type.convert}}.}
+
 \item{x}{numeric matrix or data frame}
 
 \item{...}{other arguments to be passed to the function cor.test.}
 }
 \value{
-\itemize{
- \item ggcorrplot(): Returns a ggplot2
- \item cor_pmat(): Returns a matrix containing the p-values of correlations
- }
+\itemize{ \item ggcorrplot(): Returns a ggplot2 \item cor_pmat():
+Returns a matrix containing the p-values of correlations }
 }
 \description{
 \itemize{ \item ggcorrplot(): A graphical display of a
