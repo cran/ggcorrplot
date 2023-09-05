@@ -1,8 +1,7 @@
 Type: Package
 Package: ggcorrplot
 Title: Visualization of a Correlation Matrix using 'ggplot2'
-Version: 0.1.4
-Date: 2029-09-27
+Version: 0.1.4.1
 Authors@R: 
     c(person(given = "Alboukadel",
              family = "Kassambara",
@@ -30,10 +29,10 @@ Language: en-US
 RoxygenNote: 7.1.0
 Config/testthat/edition: 3
 NeedsCompilation: no
-Packaged: 2022-09-27 01:40:18 UTC; kassambara
+Packaged: 2023-09-05 15:45:33 UTC; hornik
 Author: Alboukadel Kassambara [aut, cre],
   Indrajeet Patil [ctb] (<https://orcid.org/0000-0003-1995-6531>,
     @patilindrajeets)
 Maintainer: Alboukadel Kassambara <alboukadel.kassambara@gmail.com>
 Repository: CRAN
-Date/Publication: 2022-09-27 02:50:02 UTC
+Date/Publication: 2023-09-05 15:50:48 UTC
